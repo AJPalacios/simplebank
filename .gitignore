@@ -1,0 +1,61 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# Output of build tools
+/build/
+/bin/
+/dist/
+
+# Go workspace file
+*.code-workspace
+
+# Go modules
+/go.sum
+
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+# SQLC generated code (if you want to ignore it)
+# db/sqlc/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+
+# Test cache and coverage
+*.out
+*.coverprofile
+*.test
+
+# Environment files
+.env
+.env.*
+
+# Mac system files
+.DS_Store
+
+# Node modules (if any)
+node_modules/
+
+# Python cache (if any)
+__pycache__/
+*.pyc
+
+# Database files
+*.db
+*.sqlite
+
+# Misc
+*.bak
+*.tmp
