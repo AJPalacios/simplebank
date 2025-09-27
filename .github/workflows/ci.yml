@@ -35,7 +35,12 @@ jobs:
 
           - name: Check out code
             uses: actions/checkout@v3
-          
+
+          - name: Install Golang Migrate
+            run: |  
+              curl -L https://github.com/golang-migrate/migrate/releases/download/v4.19.0/migrate-4.19.0.zip | tar xvz
+              sudo mv migrate /usr/local/bin/
+              which migrate
           - name: Run migrations
             run: make migrateup
 
