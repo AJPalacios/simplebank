@@ -41,6 +41,7 @@
 # Environment files
 .env
 .env.*
+app.env
 
 # Mac system files
 .DS_Store
