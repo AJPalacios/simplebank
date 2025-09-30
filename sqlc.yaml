@@ -11,6 +11,7 @@ sql:
         emit_prepared_queries: true
         emit_exact_table_names: false
         emit_interface: false
+        emit_empty_slices: true
 overrides: {}
 plugins: []
 rules: []
