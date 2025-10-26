@@ -212,7 +212,7 @@ func randomUser(t *testing.T) (user db.User, password string) {
 }
 
 func newTestServer(t *testing.T, store db.Store) *Server {
-	server := NewServer(store)
+	server := NewTestServer(t, store)
 	require.NotNil(t, server)
 
 	return server

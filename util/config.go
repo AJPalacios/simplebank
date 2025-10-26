@@ -5,9 +5,11 @@ import "github.com/spf13/viper"
 // Config stores all configuration of the application
 // The vales are read by viper from a config file or environment variables
 type Config struct {
-	DBDriver      string `mapstructure:"DB_DRIVER"`
-	DBSource      string `mapstructure:"DB_SOURCE"`
-	ServerAddress string `mapstructure:"SERVER_ADDRESS"`
+	DBDriver            string `mapstructure:"DB_DRIVER"`
+	DBSource            string `mapstructure:"DB_SOURCE"`
+	ServerAddress       string `mapstructure:"SERVER_ADDRESS"`
+	TokenSymKey         string `mapstructure:"TOKEN_SYM_KEY"`
+	AccessTokenDuration string `mapstructure:"ACCESS_TOKEN_DURATION"`
 }
 
 // LoadConfig reads configuration from file or environment variables.
