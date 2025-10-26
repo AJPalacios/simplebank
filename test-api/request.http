@@ -1,20 +1,77 @@
 @baseUrl = http://localhost:8080
-### Crear una cuenta
-POST {{baseUrl}}/accounts
-Content-Type: application/json
+# ⚠️ Actualiza este token después de hacer login
+@authToken = Bearer YOUR_TOKEN_HERE
 
-{
-  "owner": "user",
-  "currency": "USD"
-}
+###############################################
+# 👤 USUARIOS
+###############################################
 
-### Crear un usuario
+### Crear usuario
 POST {{baseUrl}}/users
 Content-Type: application/json
 
 {
-  "username": "adan",
+  "username": "adanpalacios",
   "password": "password123",
-  "full_name": "adan palacios",
-  "email": "user@example.com"
+  "full_name": "Adan Palacios",
+  "email": "adan@example.com"
+}
+
+### Login (copia el access_token y actualiza @authToken arriba)
+POST {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+  "username": "adanpalacios",
+  "password": "password123"
+}
+
+###############################################
+# 💰 CUENTAS (requieren autenticación)
+###############################################
+
+### Crear cuenta USD
+POST {{baseUrl}}/accounts
+Content-Type: application/json
+Authorization: {{authToken}}
+
+{
+  "currency": "USD"
+}
+
+### Crear cuenta EUR
+POST {{baseUrl}}/accounts
+Content-Type: application/json
+Authorization: {{authToken}}
+
+{
+  "currency": "EUR"
+}
+
+### Obtener cuenta por ID
+GET {{baseUrl}}/accounts/1
+Authorization: {{authToken}}
+
+### Listar cuentas (Página 1)
+GET {{baseUrl}}/accounts?page_id=1&page_size=5
+Authorization: {{authToken}}
+
+### Listar cuentas (Página 2)
+GET {{baseUrl}}/accounts?page_id=2&page_size=5
+Authorization: {{authToken}}
+
+###############################################
+# 💸 TRANSFERENCIAS (requieren autenticación)
+###############################################
+
+### Crear transferencia
+POST {{baseUrl}}/transfers
+Content-Type: application/json
+Authorization: {{authToken}}
+
+{
+  "from_account_id": 1,
+  "to_account_id": 2,
+  "amount": 10,
+  "currency": "USD"
 }
