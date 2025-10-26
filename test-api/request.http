@@ -1,0 +1,20 @@
+@baseUrl = http://localhost:8080
+### Crear una cuenta
+POST {{baseUrl}}/accounts
+Content-Type: application/json
+
+{
+  "owner": "user",
+  "currency": "USD"
+}
+
+### Crear un usuario
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "username": "adan",
+  "password": "password123",
+  "full_name": "adan palacios",
+  "email": "user@example.com"
+}
